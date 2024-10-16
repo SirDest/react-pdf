@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     fontSize: 14,
+    alignItems: "center",
   },
   invoice: {
     fontSize: 30,
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     fontSize: 10,
     fontWeight: "normal",
+    marginBottom: 3,
   },
   link: {
     display: "flex",
@@ -43,10 +45,49 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: "normal",
     color: "blue",
+    marginBottom: 3,
   },
   headText: {
     fontSize: 10,
     fontWeight: "bold",
+    marginBottom: 3,
+    width: "20%",
+  },
+  table: {
+    flexDirection: "column",
+    backgroundColor: "#f9f9f9",
+    padding: 20,
+  },
+  tableHead: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
+  },
+  tableRow: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  rowText: {
+    fontSize: 10,
+    fontWeight: "normal",
+    marginBottom: 3,
+    paddingRight: 15,
+    width: "20%",
+  },
+  secTableHead: {
+    marginLeft: 50,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
   },
 });
 
@@ -107,6 +148,28 @@ const MyDocument: React.FC = () => (
             </Text>
           </View>
         </View>
+      </View>
+      <View style={styles.table}>
+        <View style={styles.tableHead}>
+          <Text style={styles.headText}>Contract #</Text>
+          <Text style={styles.headText}>Contract Type</Text>
+          <Text style={styles.headText}>Project Type</Text>
+          <Text style={styles.headText}>Subcontract #</Text>
+          <Text style={styles.headText}>Purchase Order #</Text>
+        </View>
+        <View style={styles.tableRow}>
+          <Text style={styles.rowText}>234567</Text>
+          <Text style={styles.rowText}>
+            Firm Fixed Price, Level-of-effort (FPP, LOE)
+          </Text>
+          <Text style={styles.rowText}>cosmic Project</Text>
+          <Text style={styles.rowText}>7654321</Text>
+          <Text style={styles.rowText}></Text>
+        </View>
+      </View>
+      <View style={styles.secTableHead}>
+        <Text style={styles.headText}>CLIN #</Text>
+        
       </View>
     </Page>
   </Document>
