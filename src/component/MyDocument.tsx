@@ -47,12 +47,6 @@ const styles = StyleSheet.create({
     color: "blue",
     marginBottom: 3,
   },
-  headText: {
-    fontSize: 10,
-    fontWeight: "bold",
-    marginBottom: 3,
-    width: "20%",
-  },
   table: {
     flexDirection: "column",
     backgroundColor: "#f9f9f9",
@@ -66,12 +60,19 @@ const styles = StyleSheet.create({
     borderBottomColor: "#000",
     borderBottomStyle: "solid",
   },
+  headText: {
+    fontSize: 10,
+    fontWeight: "bold",
+    marginBottom: 3,
+    width: "20%",
+    justifyContent: "space-between",
+    paddingRight: 20,
+  },
   tableRow: {
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
-    paddingBottom: 10,
-    paddingTop: 10,
+    paddingVertical: 10,
   },
   rowText: {
     fontSize: 10,
@@ -79,15 +80,96 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     paddingRight: 15,
     width: "20%",
+    justifyContent: "space-between",
   },
-  secTableHead: {
-    marginLeft: 50,
-    flexDirection: "row",
+  secTable: {
+    marginLeft: 130,
+    flexDirection: "column",
     justifyContent: "space-between",
     paddingBottom: 10,
+  },
+  thirdTableText: {
+    fontSize: 10,
+    fontWeight: "bold",
+    marginBottom: 3,
+    width: "16.5%",
+    justifyContent: "space-between",
+    paddingRight: 10,
+  },
+  lastrow: {
+    flexDirection: "row",
+    paddingVertical: 10,
+    textAlign: "left",
     borderBottomWidth: 2,
     borderBottomColor: "#000",
     borderBottomStyle: "solid",
+    borderTopWidth: 2,
+    borderTopColor: "#000",
+    borderTopStyle: "solid",
+  },
+  totalrow: {
+    marginTop: 20,
+    display: "flex",
+    flexDirection: "row",
+    width: "270px",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginLeft: "auto",
+  },
+  totalRowText: {
+    fontSize: 10,
+    fontWeight: "bold",
+    width: "50%",
+    textAlign: "right",
+    alignItems: "center",
+    paddingVertical: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
+    borderTopWidth: 2,
+    borderTopColor: "#000",
+    borderTopStyle: "solid",
+  },
+  totalAmtText: {
+    fontSize: 10,
+    fontWeight: "bold",
+    width: "50%",
+    textAlign: "left",
+    paddingVertical: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
+    borderTopWidth: 2,
+    borderTopColor: "#000",
+    borderTopStyle: "solid",
+  },
+  netRow: {
+    marginTop: 10,
+    display: "flex",
+    flexDirection: "row",
+    width: "270px",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginLeft: "auto",
+  },
+  netText: {
+    display: "flex",
+    width: "270px",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    fontSize: 9,
+  },
+  contact: {
+    fontSize: 10,
+    fontWeight: "bold",
+    marginBottom: 3,
+  },
+  lastText: {
+    marginTop: 10,
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    fontSize: 9,
   },
 });
 
@@ -167,9 +249,70 @@ const MyDocument: React.FC = () => (
           <Text style={styles.rowText}></Text>
         </View>
       </View>
-      <View style={styles.secTableHead}>
-        <Text style={styles.headText}>CLIN #</Text>
-        
+      <View style={styles.secTable}>
+        <View style={styles.tableHead}>
+          <Text style={styles.headText}>CLIN #</Text>
+          <Text style={styles.headText}>Purchase Order Funding</Text>
+          <Text style={styles.headText}>Current Period Amount</Text>
+          <Text style={styles.headText}>Cumulative Amount</Text>
+          <Text style={styles.headText}>Remaining Funding</Text>
+        </View>
+        <View style={styles.tableRow}>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}>$10,000.00</Text>
+          <Text style={styles.rowText}>$2,000.00</Text>
+          <Text style={styles.rowText}>$10,000.00</Text>
+          <Text style={styles.rowText}>$0.00</Text>
+        </View>
+      </View>
+      <View style={styles.table}>
+        <View style={styles.tableHead}>
+          <Text style={styles.thirdTableText}>Products/Services</Text>
+          <Text style={styles.thirdTableText}>CLIN #</Text>
+          <Text style={styles.thirdTableText}>Current Period Hours</Text>
+          <Text style={styles.thirdTableText}>Cumulative hours to Date</Text>
+          <Text style={styles.thirdTableText}>Rate</Text>
+          <Text style={styles.thirdTableText}>Current Period Amount</Text>
+        </View>
+        <View style={styles.tableRow}>
+          <Text style={styles.rowText}>test</Text>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}>20</Text>
+          <Text style={styles.rowText}>20</Text>
+          <Text style={styles.rowText}>500</Text>
+          <Text style={styles.rowText}>$10,000.00</Text>
+        </View>
+        <View style={styles.lastrow}>
+          <Text style={styles.rowText}>Total</Text>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}></Text>
+          <Text style={styles.rowText}>$2,000.00</Text>
+        </View>
+        <View style={styles.totalrow}>
+          <Text style={styles.totalAmtText}>TOTAL AMOUNT DUE:</Text>
+          <Text style={styles.totalRowText}>$2,000.00</Text>
+        </View>
+        <View style={styles.netRow}>
+          <Text style={styles.netText}>Net Term: 2</Text>
+        </View>
+      </View>
+      <View style={styles.page}>
+        <Text style={styles.contact}>
+          Contact person for invoice corrections:
+        </Text>
+        <Text style={styles.text}>Bliss</Text>
+        <Text style={styles.text}>3456789</Text>
+        <Text style={styles.link}>yet@ymail.com</Text>
+        <Text style={styles.lastText}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+          doloremque consequatur illo, vero excepturi aperiam quis earum
+          distinctio nam rerum animi, cum quas pariatur cumque cupiditate ipsam
+          itaque officia id impedit velit! Placeat laborum architecto
+          necessitatibus molestiae pariatur magni quod delectus! Tenetur
+          excepturi illum corporis totam temporibus illo molestiae eius.
+        </Text>
       </View>
     </Page>
   </Document>
